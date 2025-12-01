@@ -1,0 +1,36 @@
+CREATE DATABASE MyApplication;
+USE MyApplication;
+
+CREATE TABLE User (
+    id INT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL
+);
+
+INSERT INTO User (username, password)
+VALUES ('admin', '1234');
+
+INSERT INTO User (username, password)
+VALUES ('adminrey', '123456');
+
+
+    USE MyApplication;
+    CREATE TABLE students (
+        id INT PRIMARY KEY AUTO_INCREMENT,
+        name VARCHAR(150) NOT NULL,
+        course VARCHAR(150) NOT NULL,
+        year_level VARCHAR(20) NOT NULL,
+        email VARCHAR(150) NOT NULL
+    );
+
+USE MyApplication;
+DROP TABLE IF EXISTS students;
+
+CREATE TABLE students (
+    table_id INT PRIMARY KEY,   -- INTERNAL AUTO ID
+    student_id INT NOT NULL UNIQUE,            -- USER TYPED ID
+    name VARCHAR(150) NOT NULL,
+    course VARCHAR(150) NOT NULL,
+    year_level VARCHAR(20) NOT NULL,
+    email VARCHAR(150) NOT NULL
+);
